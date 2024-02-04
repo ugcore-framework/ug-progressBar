@@ -2,7 +2,7 @@ function CheckVersion()
     local updatePath = 'https://raw.githubusercontent.com/ugcore-framework/ug-progressBar/main/version.json'
     PerformHttpRequest(updatePath, function (status, body, headers, errorData)
         local data = json.decode(body)
-        local currentVersion = json.decode(LoadResourceFile(GetCurrentResourceName(), 'version.json'))
+        local localData = json.decode(LoadResourceFile(GetCurrentResourceName(), 'version.json'))
         local currentVersion = localData.Version
 
         if not data or not currentVersion then
