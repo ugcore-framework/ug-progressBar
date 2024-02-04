@@ -3,6 +3,7 @@ function CheckVersion()
     PerformHttpRequest(updatePath, function (status, body, headers, errorData)
         local data = json.decode(body)
         local currentVersion = json.decode(LoadResourceFile(GetCurrentResourceName(), 'version.json'))
+        local currentVersion = localData.Version
 
         if not data or not currentVersion then
             print('^7[ug-progressBar]: ====================================')
